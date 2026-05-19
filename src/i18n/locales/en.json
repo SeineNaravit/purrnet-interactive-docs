@@ -67,6 +67,11 @@
       "gameplayStateController": "Gameplay State Controller",
       "steamConnectionWorkflow": "Steam Connection Workflow",
       "localCharacterToOnline": "Local Character to Online",
+      "sideScrolling2D": "2D Side Scrolling Controller",
+      "sideScrolling25D": "2.5D Side Scrolling Controller",
+      "strategyUnitCommander": "Strategy Unit Commander",
+      "gridSurvivalCrafting": "Grid Survival Crafting",
+      "characterCreationSystem": "Character Creation System",
       "animancerIntegration": "Animancer"
     }
   },
