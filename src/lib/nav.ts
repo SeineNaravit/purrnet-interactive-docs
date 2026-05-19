@@ -85,6 +85,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "Integration",
+    titleKey: "sidebar.sections.integration",
+    icon: "🔗",
+    items: [
+      { title: "Animancer", titleKey: "sidebar.pages.animancerIntegration", href: "/docs/animancer-integration", badge: "Integration" },
+    ],
+  },
+  {
     title: "Advanced",
     titleKey: "sidebar.sections.advanced",
     icon: "⚡",

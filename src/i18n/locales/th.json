@@ -24,6 +24,7 @@
       "syncTypes": "ประเภท Sync",
       "plugAndPlay": "ปลั๊ก & เล่น",
       "codeFeatures": "ตัวอย่างโค้ด",
+      "integration": "การรวมระบบ",
       "advanced": "ขั้นสูง"
     },
     "pages": {
@@ -62,7 +63,8 @@
       "thirdPersonController": "3rd Person Controller",
       "gameplayStateController": "Gameplay State Controller",
       "steamConnectionWorkflow": "Steam Connection Workflow",
-      "localCharacterToOnline": "Local Character สู่ Online"
+      "localCharacterToOnline": "Local Character สู่ Online",
+      "animancerIntegration": "Animancer"
     }
   },
   "home": {

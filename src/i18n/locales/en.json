@@ -27,6 +27,7 @@
       "syncTypes": "Sync Types",
       "plugAndPlay": "Plug & Play",
       "codeFeatures": "Code Features",
+      "integration": "Integration",
       "advanced": "Advanced"
     },
     "pages": {
@@ -65,7 +66,8 @@
       "thirdPersonController": "3rd Person Controller",
       "gameplayStateController": "Gameplay State Controller",
       "steamConnectionWorkflow": "Steam Connection Workflow",
-      "localCharacterToOnline": "Local Character to Online"
+      "localCharacterToOnline": "Local Character to Online",
+      "animancerIntegration": "Animancer"
     }
   },
 
