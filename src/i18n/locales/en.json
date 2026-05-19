@@ -64,7 +64,8 @@
       "topDownController": "Top Down Controller",
       "thirdPersonController": "3rd Person Controller",
       "gameplayStateController": "Gameplay State Controller",
-      "steamConnectionWorkflow": "Steam Connection Workflow"
+      "steamConnectionWorkflow": "Steam Connection Workflow",
+      "localCharacterToOnline": "Local Character to Online"
     }
   },
 

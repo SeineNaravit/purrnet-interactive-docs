@@ -3,6 +3,7 @@ import { Callout } from "@/components/docs/Callout";
 import { CodeBlock } from "@/components/docs/CodeBlock";
 import { ParamTable } from "@/components/docs/ParamTable";
 import { BilingualContent } from "@/components/docs/BilingualContent";
+import { BitPackerVisualizer } from "@/components/visualizers/BitPackerVisualizer";
 
 export const metadata = { title: "BitPacker Serialization" };
 
@@ -258,6 +259,8 @@ export default function Page() {
           badge="Advanced"
           href="/docs/bitpacker"
         >
+          <BitPackerVisualizer />
+
           <div className="prose">
             <h2>Two serialization modes</h2>
             <p>
@@ -344,6 +347,8 @@ export default function Page() {
           badge="Advanced"
           href="/docs/bitpacker"
         >
+          <BitPackerVisualizer />
+
           <div className="prose">
             <h2>สอง serialization modes</h2>
             <p>

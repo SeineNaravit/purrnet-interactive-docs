@@ -3,6 +3,7 @@ import { Callout } from "@/components/docs/Callout";
 import { CodeBlock } from "@/components/docs/CodeBlock";
 import { ParamTable } from "@/components/docs/ParamTable";
 import { BilingualContent } from "@/components/docs/BilingualContent";
+import { PlayerIdentityVisualizer } from "@/components/visualizers/PlayerIdentityVisualizer";
 
 export const metadata = { title: "PlayerIdentity" };
 
@@ -82,6 +83,8 @@ export default function Page() {
           badge="Advanced"
           href="/docs/player-identity"
         >
+          <PlayerIdentityVisualizer />
+
           <div className="prose">
             <h2>Overview</h2>
             <p>
@@ -287,6 +290,8 @@ public class AntiCheatSystem : NetworkBehaviour
           badge="Advanced"
           href="/docs/player-identity"
         >
+          <PlayerIdentityVisualizer />
+
           <div className="prose">
             <h2>ภาพรวม</h2>
             <p>

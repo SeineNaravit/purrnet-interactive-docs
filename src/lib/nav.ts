@@ -75,6 +75,7 @@ export const navSections: NavSection[] = [
     titleKey: "sidebar.sections.codeFeatures",
     icon: "🎮",
     items: [
+      { title: "Local Character to Online",    titleKey: "sidebar.pages.localCharacterToOnline", href: "/docs/local-character-to-online", badge: "Example" },
       { title: "Monster Status System",       titleKey: "sidebar.pages.monsterStatus",         href: "/docs/monster-status",          badge: "Example" },
       { title: "Inventory System",            titleKey: "sidebar.pages.inventorySystem",        href: "/docs/inventory-system",         badge: "Example" },
       { title: "Top Down Controller",         titleKey: "sidebar.pages.topDownController",       href: "/docs/top-down-controller",       badge: "Example" },
