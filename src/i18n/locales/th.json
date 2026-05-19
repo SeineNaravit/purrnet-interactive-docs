@@ -1,0 +1,541 @@
+{
+  "_meta": {
+    "language": "ภาษาไทย",
+    "code": "th",
+    "direction": "ltr",
+    "translatedBy": "Claude Haiku 4.5"
+  },
+  "site": {
+    "name": "PurrNet Docs",
+    "tagline": "เอกสารโต้ตอบเชิงอินเทอร์แอคทีฟสำหรับ PurrNet — ห้องสมุดการสื่อสารเครือข่าย Unity ที่สมบูรณ์แบบ",
+    "badge": "ฟรี & โอเพนซอร์ส · MIT License"
+  },
+  "nav": {
+    "officialSite": "ไซต์อย่างเป็นทางการ",
+    "github": "GitHub",
+    "search": "ค้นหาเอกสาร...",
+    "toggleTheme": "เปลี่ยนธีม"
+  },
+  "sidebar": {
+    "sections": {
+      "gettingStarted": "เริ่มต้นใช้งาน",
+      "coreConcepts": "แนวคิดหลัก",
+      "remoteProcedureCalls": "Remote Procedure Calls",
+      "syncTypes": "ประเภท Sync",
+      "plugAndPlay": "ปลั๊ก & เล่น",
+      "codeFeatures": "ตัวอย่างโค้ด",
+      "advanced": "ขั้นสูง"
+    },
+    "pages": {
+      "introduction": "บทนำ",
+      "installation": "การติดตั้ง",
+      "minimalSetup": "การตั้งค่าขั้นต่ำ",
+      "networkIdentity": "NetworkIdentity",
+      "networkBehaviour": "NetworkBehaviour",
+      "ownership": "การเป็นเจ้าของ",
+      "spawning": "การสร้าง & การลบ",
+      "networkRules": "Network Rules",
+      "serverRpc": "ServerRpc",
+      "observersRpc": "ObserversRpc",
+      "targetRpc": "TargetRpc",
+      "awaitableRpc": "Awaitable RPC",
+      "staticRpc": "Static & Generic RPC",
+      "syncVar": "SyncVar",
+      "syncList": "SyncList",
+      "syncDictionary": "SyncDictionary",
+      "syncEvent": "SyncEvent",
+      "syncTimer": "SyncTimer",
+      "syncInput": "SyncInput",
+      "networkTransform": "Network Transform",
+      "networkAnimator": "Network Animator",
+      "networkRigidbody": "Network Rigidbody",
+      "broadcasts": "Broadcasts",
+      "networkModules": "Network Modules",
+      "playerIdentity": "PlayerIdentity",
+      "authentication": "การพิสูจน์ตัวตน",
+      "bitpacker": "BitPacker Serialization",
+      "transports": "Transports",
+      "clientSidePrediction": "Client-Side Prediction",
+      "monsterStatus": "ระบบสถานะมอนสเตอร์",
+      "inventorySystem": "ระบบ Inventory",
+      "topDownController": "Top Down Controller",
+      "thirdPersonController": "3rd Person Controller",
+      "gameplayStateController": "Gameplay State Controller",
+      "steamConnectionWorkflow": "Steam Connection Workflow"
+    }
+  },
+  "home": {
+    "heroTitle": "เรียนรู้ PurrNet",
+    "heroTitleAccent": "ด้วยภาพและความเร็ว",
+    "heroDesc": "ภาพเคลื่อนไหวแบบโต้ตอบสำหรับทุกคำสั่ง ทำความเข้าใจวิธีการทำงานของการสื่อสารเครือข่ายแบบมัลติเพลเยอร์ — ไม่ใช่แค่ API แต่ยังเป็นเหตุผลและเวลา",
+    "ctaStart": "เริ่มเรียน",
+    "ctaRpcs": "ไปที่ RPCs",
+    "features": {
+      "zeroBoilerplate": {
+        "label": "ไม่มี Boilerplate",
+        "desc": "Instantiate() และ Destroy() ทำงานได้เลย ไม่ต้องเรียก spawn พิเศษ"
+      },
+      "flexibleAuthority": {
+        "label": "อำนาจที่ยืดหยุ่น",
+        "desc": "สลับระหว่าง client auth และ server auth ผ่าน Network Rules — ไม่ต้องเปลี่ยนโค้ด"
+      },
+      "modularDesign": {
+        "label": "ออกแบบแบบโมดูลาร์",
+        "desc": "NetworkModules ช่วยให้สามารถใช้โลจิกเครือข่ายที่นำมาใช้ซ้ำได้อิสระจาก MonoBehaviours"
+      },
+      "perComponentOwnership": {
+        "label": "การเป็นเจ้าของต่อคอมโพเนนต์",
+        "desc": "GameObject เดียวสามารถมีเจ้าของที่แตกต่างกันต่อ NetworkIdentity component"
+      },
+      "richSyncTypes": {
+        "label": "ประเภท Sync ที่หลากหลาย",
+        "desc": "SyncVar, SyncList, SyncDictionary, SyncEvent, SyncTimer, SyncInput"
+      },
+      "rpcSuperset": {
+        "label": "RPC Superset",
+        "desc": "ServerRpc, ObserversRpc, TargetRpc — บวกกับรูปแบบ awaitable, generic และ static"
+      }
+    }
+  },
+  "pagination": {
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป"
+  },
+  "visualizer": {
+    "play": "เล่น",
+    "pause": "หยุด",
+    "reset": "รีเซ็ต",
+    "forceSync": "บังคับ Sync",
+    "latency": "Latency",
+    "packetLoss": "Packet Loss",
+    "sendInterval": "Interval",
+    "runLocally": "RunLocally",
+    "ownerAuth": "ownerAuth",
+    "interpolate": "Interpolate",
+    "restart": "เริ่มใหม่",
+    "accept": "ยอมรับ",
+    "deny": "ปฏิเสธ"
+  },
+  "badges": {
+    "rpc": "RPC",
+    "core": "Core",
+    "syncType": "Sync Type",
+    "plugPlay": "Plug & Play",
+    "advanced": "ขั้นสูง",
+    "purrDiction": "PurrDiction"
+  },
+  "callouts": {
+    "comingSoon": {
+      "title": "เนื้อหาฉบับสมบูรณ์จะมาในไม่ช้า",
+      "body": "เอกสารโต้ตอบอย่างละเอียดสำหรับหัวข้อนี้กำลังเขียน สำหรับตอนนี้โปรดดู PurrNet GitBook อย่างเป็นทางการ"
+    },
+    "gitRequired": {
+      "title": "จำเป็นต้องมี Git",
+      "body": "ตรวจสอบให้แน่ใจว่า Git ถูกติดตั้งบนระบบของคุณก่อนใช้วิธี Package Manager URL หลังจากติดตั้ง Git ให้รีสตาร์ท Unity และ Unity Hub"
+    },
+    "infoTip": {
+      "whoCanSpawn": {
+        "title": "ใครสามารถสร้างได้?",
+        "body": "โดยค่าเริ่มต้น (Server Auth rules) เฉพาะเซิร์ฟเวอร์เท่านั้นที่สามารถสร้าง networked objects ด้วย Client Auth rules คลายเอนต์ยังสามารถเรียก Instantiate() สำหรับ networked prefabs ได้ ควบคุมผ่าน Network Rules"
+      }
+    },
+    "runLocallyDivergence": {
+      "title": "RunLocally divergence",
+      "body": "เมื่อใช้ runLocally: true คลายเอนต์อาจแสดงสถานะชั่วคราวที่เซิร์ฟเวอร์จะแก้ไขในภายหลัง ควรปรองดองสถานะที่เซิร์ฟเวอร์อนุมัติบนคลายเอนต์เพื่อป้องกันข้อบกพร่องทางภาพ"
+    },
+    "neverTrustClientInput": {
+      "title": "ไม่ควรไว้วางใจอินพุตของคลายเอนต์",
+      "body": "ตรวจสอบเสมอบนเซิร์ฟเวอร์ คลายเอนต์สามารถส่งค่าใดก็ได้ — ตรวจสอบขอบเขต cooldowns และสถานะเกมก่อนนำไปใช้"
+    },
+    "bufferLastVsSyncVar": {
+      "title": "bufferLast vs SyncVar",
+      "body": "สำหรับค่าที่เปลี่ยนแปลงต่อเนื่อง (สุขภาพ คะแนน ตำแหน่ง) ให้ใช้ SyncVar — จัดการ buffering โดยอัตโนมัติ ใช้ bufferLast บน ObserversRpc สำหรับเหตุการณ์ครั้งเดียวที่ต้องเล่นซ้ำ (เริ่มเกม จบรอบ)"
+    },
+    "requireServer": {
+      "title": "requireServer",
+      "body": "ถ้า requireServer เป็น false (ค่าเริ่มต้น) คลายเอนต์สามารถเรียก ObserversRpc ด้วยตนเองได้หาก Network Rules อนุญาต ในเกมที่เซิร์ฟเวอร์มีอำนาจ ตั้งค่า requireServer: true เสมอ"
+    },
+    "declareAsField": {
+      "title": "ประกาศในฟิลด์ ไม่ใช่ในเมธอด",
+      "body": "SyncVar ต้องประกาศเป็น class field (หรือ property) บน NetworkBehaviour การสร้างภายในเมธอดหรือเพิ่มลงใน list จะทำให้ synchronisation เสีย"
+    },
+    "avoidSyncEveryFrame": {
+      "title": "หลีกเลี่ยงการ sync ทุกเฟรม",
+      "body": "อย่าตั้งค่า .value ใน Update() โดยไม่ตรวจสอบการเปลี่ยนแปลง ตรวจสอบเสมอว่าค่าเปลี่ยนแปลงจริงก่อนที่จะกำหนด"
+    },
+    "ownerAuthAndServer": {
+      "title": "ownerAuth และการเขียนเซิร์ฟเวอร์",
+      "body": "เมื่อ ownerAuth: true เฉพาะเจ้าของเท่านั้นที่สามารถเขียนจากคลายเอนต์ เซิร์ฟเวอร์สามารถเขียนได้เสมอโดยไม่คำนึงถึง"
+    },
+    "setDirtyForStructs": {
+      "title": "SetDirty สำหรับ mutable structs",
+      "body": "ถ้า T เป็น struct และคุณแก้ไขฟิลด์ขององค์ประกอบในตำแหน่ง SyncList ไม่สามารถตรวจจับการเปลี่ยนแปลงได้โดยอัตโนมัติ เรียก SetDirty(index) หลังจากการแก้ไขเพื่อบังคับ sync"
+    },
+    "isControllerShortcut": {
+      "title": "IsController ทางลัด",
+      "body": "ใช้ IsController แทน isOwner || isServer — คืนค่า true หากคุณเป็นเจ้าของ หรือหากคุณเป็นเซิร์ฟเวอร์และวัตถุไม่มีเจ้าของ"
+    },
+    "giveOwnershipServerSide": {
+      "title": "GiveOwnership ทำงานฝั่งเซิร์ฟเวอร์",
+      "body": "เรียก GiveOwnership จากโค้ดเซิร์ฟเวอร์เท่านั้น เว้นแต่ Network Rules จะอนุญาตการโอนเจ้าของที่เริ่มจากคลายเอนต์ การโอนเจ้าของที่ไม่จำกัดเป็นช่องทางโกงทั่วไป"
+    },
+    "unsafeInProduction": {
+      "title": "ไม่ต้องใช้ Unsafe rules ในการผลิต",
+      "body": "ชุดค่ากำหนด Unsafe ให้ทุกคลายเอนต์มีอำนาจเต็มที่ มีไว้สำหรับ prototyping เท่านั้น ใช้ ServerOwner หรือ ServerStrict สำหรับการผลิต"
+    },
+    "pooledObjectReference": {
+      "title": "Reference<T> สำหรับวัตถุที่ pool",
+      "body": "การอ้างอิง serialized ไปยังคอมโพเนนต์บนวัตถุที่ pool อาจเสียหลังจากการรีไซเคิล pool ใช้ตัวห่อ PurrNet Reference<T> แทน"
+    },
+    "noOverrideOnRemote": {
+      "title": "อย่าแทนที่ transform โดยตรงบนคลายเอนต์ระยะไกล",
+      "body": "การตั้งค่า transform.position โดยตรงบนคลายเอนต์ที่ไม่มีอำนาจจะถูกเขียนทับโดยการ sync NetworkTransform ครั้งถัดไป แก้ไขตำแหน่งเฉพาะบนอำนาจเท่านั้น"
+    },
+    "bandwidthOptimization": {
+      "title": "การเพิ่มประสิทธิภาพแบนด์วิธ",
+      "body": "ปิดใช้งานแกนการ sync ที่ไม่ต้องการ ใช้ค่า tolerance เพื่อระงับการอัปเดตขนาดเล็กเมื่อวัตถุอยู่นิ่ง"
+    },
+    "triggerReliableChannel": {
+      "title": "Triggers ต้องการ Reliable channel",
+      "body": "Animator triggers เป็นเหตุการณ์ครั้งเดียว ถ้าแพ็กเก็ตหลุด trigger จะหายไป ใช้ Channel.Reliable เสมอสำหรับพารามิเตอร์ trigger"
+    },
+    "kinematicBodies": {
+      "title": "Kinematic Rigidbodies",
+      "body": "NetworkRigidbody ออกแบบมาสำหรับ dynamic Rigidbodies สำหรับตัวที่ kinematic ให้ใช้ NetworkTransform แทน"
+    },
+    "modulesNotInLists": {
+      "title": "อย่าเก็บโมดูลในคอลเลกชัน",
+      "body": "Network modules ต้องประกาศเป็น fields หรือ properties บน NetworkIdentity การเก็บไว้ในอาร์เรย์ lists หรือ dictionaries จะทำให้การลงทะเบียนเครือข่ายเสีย"
+    },
+    "predictionComplexity": {
+      "title": "Prediction เพิ่มความซับซ้อนอย่างมาก",
+      "body": "Client-side prediction ต้องมีฟิสิกส์ที่กำหนดได้และการจัดการสถานะอย่างระมัดระวัง เริ่มต้นด้วย NetworkTransform และเพิ่ม prediction เฉพาะเมื่อมีความต้องการด้านการตอบสนองที่เฉพาะเจาะจง"
+    },
+    "neverStorePlainPasswords": {
+      "title": "ไม่ต้องเก็บรหัสผ่านข้อความธรรมดา",
+      "body": "ใช้ hash ข้อมูลประจำตัวเสมอก่อนส่งผ่านเครือข่าย PurrNet เข้ารหัสข้อมูล transport แต่คุณรับผิดชอบการรักษาความปลอดภัยของข้อมูลประจำตัว"
+    },
+    "iPackedAutoVsManual": {
+      "title": "IPackedAuto vs IPacked",
+      "body": "ใช้ IPackedAuto สำหรับ data structs ธรรมดา ใช้ IPacked สำหรับการควบคุมอย่างละเอียด delta compression หรือประเภทที่มีฟิลด์ความยาวแปรผัน"
+    },
+    "purrTransportFree": {
+      "title": "Purr Transport ฟรีสำหรับการพัฒนา",
+      "body": "การขนส่ง Purr relay ที่สร้างไว้ในตัวไม่ต้องตั้งค่าและฟรีสำหรับการทดสอบ สลับไปที่ UDP หรือ Steam สำหรับการผลิต"
+    }
+  },
+  "paramTables": {
+    "headers": {
+      "parameter": "พารามิเตอร์",
+      "type": "ประเภท",
+      "default": "ค่าเริ่มต้น",
+      "description": "คำอธิบาย",
+      "required": "req"
+    }
+  },
+  "pages": {
+    "introduction": {
+      "title": "บทนำสู่ PurrNet",
+      "description": "PurrNet เป็นห้องสมุดการสื่อสารเครือข่าย Unity ที่ฟรีและมีใบอนุญาต MIT ออกแบบให้รู้สึกเป็นธรรมชาติ — ไม่มีการ baking ไม่มี spawn APIs พิเศษ ไม่มีค่าใช้จ่าย",
+      "sections": {
+        "whatMakesDifferent": "อะไรที่ทำให้ PurrNet แตกต่าง?",
+        "corePhilosophy": "ปรัชญาหลัก",
+        "installation": "การติดตั้ง (ด่วน)",
+        "networkLoop": "Network loop ใน 30 วินาที",
+        "whatToLearnNext": "สิ่งที่ต้องเรียนรู้ต่อไป"
+      }
+    },
+    "installation": {
+      "title": "การติดตั้ง",
+      "description": "สามวิธีในการเพิ่ม PurrNet ไปยังโครงการ Unity ของคุณ",
+      "sections": {
+        "method1": "วิธีที่ 1: Git URL (แนะนำ)",
+        "method2": "วิธีที่ 2: Unity Asset Store",
+        "method3": "วิธีที่ 3: ดาวน์โหลดด้วยตนเอง",
+        "afterInstall": "หลังการติดตั้ง"
+      }
+    },
+    "minimalSetup": {
+      "title": "การตั้งค่าขั้นต่ำ",
+      "description": "รัน networked scene ในเวลาน้อยกว่า 5 นาที",
+      "sections": {
+        "step1": "ขั้นตอนที่ 1: Network Manager",
+        "step2": "ขั้นตอนที่ 2: NetworkBehaviour แรกของคุณ",
+        "step3": "ขั้นตอนที่ 3: Host & Connect"
+      }
+    },
+    "networkIdentity": {
+      "title": "NetworkIdentity",
+      "description": "NetworkIdentity คือคอมโพเนนต์หลักที่ลงทะเบียน GameObject กับเครือข่าย PurrNet ทุก networked object ต้องมีอย่างน้อยหนึ่ง",
+      "sections": {
+        "whatItDoes": "สิ่งที่มันทำ",
+        "comparison": "NetworkIdentity vs NetworkBehaviour",
+        "lifecycleCallbacks": "Lifecycle callbacks",
+        "keyProperties": "คุณสมบัติหลัก"
+      }
+    },
+    "networkBehaviour": {
+      "title": "NetworkBehaviour",
+      "description": "NetworkBehaviour คือ base class สำหรับสคริปต์มัลติเพลเยอร์ทั้งหมด ขยาย NetworkIdentity ด้วยการสนับสนุน RPC, SyncVars และ lifecycle hooks",
+      "sections": {
+        "whatItAdds": "สิ่งที่ NetworkBehaviour เพิ่ม",
+        "properties": "คุณสมบัติด้านอำนาจ",
+        "lifecycle": "Lifecycle",
+        "example": "ตัวอย่างสมบูรณ์",
+        "vsModule": "NetworkBehaviour vs NetworkModule"
+      }
+    },
+    "ownership": {
+      "title": "การเป็นเจ้าของ",
+      "description": "การเป็นเจ้าของกำหนดว่าคลายเอนต์ใดมีอำนาจควบคุม networked object PurrNet รองรับการเป็นเจ้าของต่อคอมโพเนนต์",
+      "sections": {
+        "vsAuthority": "การเป็นเจ้าของ vs อำนาจ",
+        "api": "อ้างอิง API",
+        "lifecycleCallbacks": "Lifecycle callbacks",
+        "givingTransfer": "การให้และโอนการเป็นเจ้าของ",
+        "perComponent": "การเป็นเจ้าของต่อคอมโพเนนต์"
+      }
+    },
+    "spawning": {
+      "title": "การสร้าง & การลบ",
+      "description": "PurrNet ดักจับการเรียก Instantiate() และ Destroy() ของ Unity — ไม่มี spawn methods พิเศษให้เรียนรู้",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "basicSpawning": "การสร้างพื้นฐาน",
+        "clientValidation": "การตรวจสอบคลายเอนต์",
+        "despawning": "การลบ",
+        "objectPooling": "Object Pooling"
+      }
+    },
+    "networkRules": {
+      "title": "Network Rules",
+      "description": "Network Rules คือ ScriptableObject ที่กำหนดรูปแบบอำนาจของเกม — ใครสามารถสร้าง ลบ เรียก RPCs และเขียน SyncVars",
+      "sections": {
+        "presets": "Presets ที่สร้างไว้",
+        "flags": "Flags ที่ตั้งค่าได้",
+        "creating": "การสร้าง Network Rules asset",
+        "runtimeSwap": "การสลับ rules ขณะรัน",
+        "example": "จาก prototype สู่ production"
+      }
+    },
+    "serverRpc": {
+      "title": "ServerRpc",
+      "description": "ServerRpc ดำเนินการเมธอดบนเซิร์ฟเวอร์เมื่อเรียกจากคลายเอนต์ เป็นวิธีหลักที่คลายเอนต์ส่งคำสั่งที่มีอำนาจ",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "params": "พารามิเตอร์ attribute",
+        "basicUsage": "การใช้พื้นฐาน",
+        "rpcInfo": "การอ่านข้อมูลผู้ส่งด้วย RPCInfo",
+        "runLocally": "RunLocally — feedback คลายเอนต์ทันที",
+        "examples": "ตัวอย่างสถานการณ์",
+        "antiPatterns": "Anti-patterns"
+      }
+    },
+    "observersRpc": {
+      "title": "ObserversRpc",
+      "description": "ObserversRpc broadcast การเรียกเมธอดจากเซิร์ฟเวอร์ไปยังคลายเอนต์ทั้งหมดที่สังเกตวัตถุ",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "params": "พารามิเตอร์ attribute",
+        "basicUsage": "การใช้พื้นฐาน",
+        "bufferLast": "bufferLast — ผู้เข้าร่วมช่วงท้าย",
+        "example": "ตัวอย่างสถานการณ์ — kill feed"
+      }
+    },
+    "targetRpc": {
+      "title": "TargetRpc",
+      "description": "TargetRpc ส่งการเรียกเมธอดจากเซิร์ฟเวอร์ไปยังคลายเอนต์เฉพาะหนึ่งคน ระบุด้วย PlayerID",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "params": "พารามิเตอร์",
+        "usage": "การใช้"
+      }
+    },
+    "awaitableRpc": {
+      "title": "Awaitable RPC",
+      "description": "Awaitable RPCs ให้คุณ await ค่าที่ส่งกลับจากการเรียกเมธอดระยะไกล คล้ายกับ async/await ใน C# ปกติ",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "syntax": "ไวยากรณ์",
+        "timeouts": "การจัดการ timeout",
+        "example": "ตัวอย่างสถานการณ์ — loot roll",
+        "comparison": "Awaitable RPC vs callback pattern"
+      }
+    },
+    "staticRpc": {
+      "title": "Static & Generic RPC",
+      "description": "PurrNet รองรับ RPCs บน static methods และพารามิเตอร์ generic เพื่อความยืดหยุ่นสูงสุด",
+      "sections": {
+        "staticRpc": "Static RPC",
+        "genericRpc": "Generic RPC",
+        "constraints": "ข้อจำกัด",
+        "example": "ตัวอย่างสถานการณ์"
+      }
+    },
+    "syncVar": {
+      "title": "SyncVar",
+      "description": "SyncVar ซิงโครไนซ์ตัวแปรที่มีประเภทโดยอัตโนมัติทั่วคลายเอนต์ที่เชื่อมต่อทั้งหมดเมื่อค่าเปลี่ยนแปลง",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "params": "พารามิเตอร์ Constructor",
+        "basicUsage": "การใช้พื้นฐาน",
+        "previousValue": "การอ่านค่าก่อนหน้า",
+        "examples": "ตัวอย่างสถานการณ์",
+        "customStruct": "การ sync struct แบบกำหนดเอง"
+      }
+    },
+    "syncList": {
+      "title": "SyncList",
+      "description": "SyncList คือ list ที่ network-aware ซึ่งซิงโครไนซ์การเพิ่ม ลบ แทรก และล้างโดยอัตโนมัติทั่วคลายเอนต์ทั้งหมด",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "changeProps": "คุณสมบัติ SyncListChange",
+        "methods": "เมธอดที่มี",
+        "example": "ตัวอย่างสถานการณ์ — team roster"
+      }
+    },
+    "syncDictionary": {
+      "title": "SyncDictionary",
+      "description": "SyncDictionary คือ key-value store ที่ network-aware ซิงโครไนซ์ mutations ทั้งหมดทั่วคลายเอนต์",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "changeProps": "คุณสมบัติ SyncDictionaryChange",
+        "methods": "เมธอดที่มี",
+        "example": "ตัวอย่างสถานการณ์ — scoreboard"
+      }
+    },
+    "syncEvent": {
+      "title": "SyncEvent",
+      "description": "SyncEvent คือ networked event ที่เกิดขึ้นทั่วคลายเอนต์ทั้งหมดเมื่อเรียกใช้บนอำนาจ — ไม่ต้อง RPC ด้วยตนเอง",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "declaration": "การประกาศ",
+        "subscribing": "การ subscribe",
+        "example": "ตัวอย่างสถานการณ์ — game events"
+      }
+    },
+    "syncTimer": {
+      "title": "SyncTimer",
+      "description": "SyncTimer คือ countdown timer ที่ synchronized อยู่ใน lockstep ทั่วคลายเอนต์ทั้งหมดโดยอัตโนมัติ",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "api": "API",
+        "example": "ตัวอย่างสถานการณ์ — round timer"
+      }
+    },
+    "syncInput": {
+      "title": "SyncInput",
+      "description": "SyncInput ซิงโครไนซ์อินพุตผู้เล่นดิบจากคลายเอนต์เจ้าของไปยังเซิร์ฟเวอร์ เปิดใช้งานการประมวลผลฟิสิกส์ฝั่งเซิร์ฟเวอร์",
+      "sections": {
+        "howItWorks": "วิธีการทำงาน",
+        "usage": "การใช้",
+        "example": "ตัวอย่างสถานการณ์ — movement controller",
+        "comparison": "SyncInput vs ServerRpc สำหรับการเคลื่อนที่"
+      }
+    },
+    "networkTransform": {
+      "title": "Network Transform",
+      "description": "NetworkTransform ซิงโครไนซ์ position, rotation, scale และ parent โดยอัตโนมัติทั่วคลายเอนต์ทั้งหมด",
+      "sections": {
+        "setup": "การตั้งค่า",
+        "settings": "การตั้งค่า Inspector",
+        "interpolation": "อธิบาย Interpolation",
+        "teleportation": "Teleportation",
+        "example": "ตัวอย่างสถานการณ์ — การโดยสารยานพาหนะ"
+      }
+    },
+    "networkAnimator": {
+      "title": "Network Animator",
+      "description": "NetworkAnimator ซิงโครไนซ์พารามิเตอร์ Animator และการเปลี่ยน state ทั่วคลายเอนต์ทั้งหมด",
+      "sections": {
+        "setup": "การตั้งค่า",
+        "settings": "การตั้งค่า Inspector",
+        "usage": "การใช้โค้ด",
+        "example": "ตัวอย่างสถานการณ์ — animations ตัวละคร"
+      }
+    },
+    "networkRigidbody": {
+      "title": "Network Rigidbody",
+      "description": "NetworkRigidbody ซิงโครไนซ์สถานะฟิสิกส์ (velocity, angular velocity) ทั่วเครือข่ายเพื่อให้ remote Rigidbodies ทำงานตามฟิสิกส์",
+      "sections": {
+        "vsTransform": "NetworkRigidbody vs NetworkTransform",
+        "settings": "การตั้งค่า Inspector",
+        "usage": "การใช้โค้ด",
+        "example": "ตัวอย่างสถานการณ์ — ระเบิดที่ขว้างออก"
+      }
+    },
+    "broadcasts": {
+      "title": "Broadcasts",
+      "description": "Broadcasts ส่งข้อมูลแพ็กเก็ตตามใจชอบที่ระดับ connection — ไม่ผูกกับ NetworkIdentity ใด",
+      "sections": {
+        "whatDifferent": "อะไรที่ทำให้ broadcasts แตกต่าง",
+        "api": "API",
+        "example": "ตัวอย่างสถานการณ์ — global chat"
+      }
+    },
+    "networkModules": {
+      "title": "Network Modules",
+      "description": "NetworkModule ช่วยให้สร้างคอมโพเนนต์ network-aware ที่นำมาใช้ซ้ำได้ ซึ่งไม่ใช่ MonoBehaviours",
+      "sections": {
+        "whatIs": "NetworkModule คืออะไร?",
+        "lifecycle": "Lifecycle",
+        "usage": "วิธีแนบ",
+        "example": "ตัวอย่างสมบูรณ์ HealthModule",
+        "vsNetworkBehaviour": "NetworkModule vs NetworkBehaviour"
+      }
+    },
+    "playerIdentity": {
+      "title": "PlayerIdentity",
+      "description": "PlayerIdentity คือ typed registry ที่ทำให้ง่ายต่อการค้นหา ทำซ้ำ และเรียกเมธอดบน player objects ทั้งหมด",
+      "sections": {
+        "api": "API",
+        "autoRegister": "การลงทะเบียนอัตโนมัติ",
+        "example": "ตัวอย่างสมบูรณ์",
+        "lobby": "ตัวอย่าง Lobby roster"
+      }
+    },
+    "authentication": {
+      "title": "การพิสูจน์ตัวตน",
+      "description": "การพิสูจน์ตัวตน PurrNet ตรวจสอบคลายเอนต์ด้วย custom payloads ก่อนอนุญาตให้เข้าร่วมเกม",
+      "sections": {
+        "overview": "ภาพรวม",
+        "clientSide": "ฝั่งคลายเอนต์: GetClientPayload",
+        "serverSide": "ฝั่งเซิร์ฟเวอร์: ValidateClientPayload",
+        "denial": "การรับฟังการปฏิเสธ",
+        "example": "ตัวอย่างสถานการณ์"
+      }
+    },
+    "bitpacker": {
+      "title": "BitPacker Serialization",
+      "description": "BitPacker คือ binary serializer ที่มีประสิทธิภาพของ PurrNet สำหรับ custom network types ลด bandwidth ให้น้อยที่สุด",
+      "sections": {
+        "modes": "สองโหมด serialization",
+        "registration": "การลงทะเบียนประเภท",
+        "methods": "เมธอด BitPacker",
+        "example": "ตัวอย่าง Manual delta compression",
+        "tips": "เคล็ดลับประหยัด bandwidth"
+      }
+    },
+    "transports": {
+      "title": "Transports",
+      "description": "PurrNet รองรับ transport layers หลายแบบ: UDP, WebSocket, Steam, EOS และอื่นๆ",
+      "sections": {
+        "types": "ประเภท Transport",
+        "composite": "CompositeTransport",
+        "setup": "การตั้งค่า",
+        "configuration": "การกำหนดค่า"
+      }
+    },
+    "clientSidePrediction": {
+      "title": "Client-Side Prediction",
+      "description": "PurrDiction ให้กรอบ client-side prediction และ server reconciliation สมบูรณ์ สร้างบน PurrNet",
+      "sections": {
+        "overview": "ภาพรวม",
+        "coreConcepts": "แนวคิดหลัก",
+        "loop": "The prediction loop",
+        "example": "ตัวอย่าง Minimal predicted character",
+        "whenToUse": "เมื่อใดควรใช้ — และเมื่อใดไม่ควร"
+      }
+    }
+  }
+}

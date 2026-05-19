@@ -1,26 +1,184 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --color-purr: var(--purr);
+  --color-purr-foreground: var(--purr-foreground);
+  --color-purr-muted: var(--purr-muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: oklch(0.98 0.004 260);
+  --foreground: oklch(0.14 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.14 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.14 0.02 260);
+  --primary: oklch(0.52 0.22 270);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.01 260);
+  --secondary-foreground: oklch(0.14 0.02 260);
+  --muted: oklch(0.94 0.008 260);
+  --muted-foreground: oklch(0.52 0.02 260);
+  --accent: oklch(0.94 0.012 260);
+  --accent-foreground: oklch(0.14 0.02 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.89 0.01 260);
+  --input: oklch(0.89 0.01 260);
+  --ring: oklch(0.52 0.22 270);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.96 0.006 260);
+  --sidebar-foreground: oklch(0.14 0.02 260);
+  --sidebar-primary: oklch(0.52 0.22 270);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.91 0.01 260);
+  --sidebar-accent-foreground: oklch(0.14 0.02 260);
+  --sidebar-border: oklch(0.89 0.01 260);
+  --sidebar-ring: oklch(0.52 0.22 270);
+  --purr: oklch(0.58 0.22 300);
+  --purr-foreground: oklch(0.99 0 0);
+  --purr-muted: oklch(0.92 0.06 300);
+}
+
+.dark {
+  --background: oklch(0.115 0.015 265);
+  --foreground: oklch(0.96 0.006 260);
+  --card: oklch(0.16 0.018 265);
+  --card-foreground: oklch(0.96 0.006 260);
+  --popover: oklch(0.16 0.018 265);
+  --popover-foreground: oklch(0.96 0.006 260);
+  --primary: oklch(0.68 0.22 270);
+  --primary-foreground: oklch(0.1 0.02 265);
+  --secondary: oklch(0.22 0.02 265);
+  --secondary-foreground: oklch(0.96 0.006 260);
+  --muted: oklch(0.22 0.018 265);
+  --muted-foreground: oklch(0.62 0.02 260);
+  --accent: oklch(0.22 0.02 265);
+  --accent-foreground: oklch(0.96 0.006 260);
+  --destructive: oklch(0.65 0.22 27);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.68 0.22 270);
+  --sidebar: oklch(0.14 0.018 265);
+  --sidebar-foreground: oklch(0.96 0.006 260);
+  --sidebar-primary: oklch(0.68 0.22 270);
+  --sidebar-primary-foreground: oklch(0.1 0.02 265);
+  --sidebar-accent: oklch(0.20 0.018 265);
+  --sidebar-accent-foreground: oklch(0.96 0.006 260);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.68 0.22 270);
+  --purr: oklch(0.72 0.22 300);
+  --purr-foreground: oklch(0.1 0.02 265);
+  --purr-muted: oklch(0.25 0.08 300);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(0.65 0.02 260 / 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.52 0.22 270 / 0.7); }
+
+/* MDX prose */
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-code: var(--foreground);
+  max-width: 72ch;
+}
+
+.prose h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+.prose h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.75rem; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+.prose h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.8rem; margin-bottom: 0.5rem; }
+.prose p { line-height: 1.75; margin-bottom: 1rem; color: oklch(from var(--foreground) calc(l - 0.05) c h); }
+.prose code:not(pre code) {
+  background: var(--muted);
+  color: var(--purr);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.prose pre { margin: 0; }
+.prose ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose li { margin-bottom: 0.3rem; line-height: 1.7; }
+.prose a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { opacity: 0.8; }
+.prose strong { font-weight: 700; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+.prose th { text-align: left; padding: 0.6rem 0.8rem; background: var(--muted); font-weight: 600; border: 1px solid var(--border); }
+.prose td { padding: 0.55rem 0.8rem; border: 1px solid var(--border); vertical-align: top; }
+.prose tr:nth-child(even) td { background: oklch(from var(--muted) l c h / 0.4); }
+
+/* ── Shiki code blocks ─────────────────────────────────────── */
+.shiki-wrapper > pre {
+  padding: 1rem;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  /* let parent div handle horizontal scroll */
+  overflow-x: visible !important;
+}
+.shiki-wrapper > pre,
+.shiki-wrapper code {
+  font-family: var(--font-mono, ui-monospace, 'Fira Code', monospace);
+}
+
+/* ── Parameter tooltip markers in code blocks ──────────────── */
+/*
+   Tokens marked with data-tip get a subtle dotted underline.
+   The actual balloon is rendered as a React fixed-position overlay
+   (CodeBlockClient.tsx) — not a CSS pseudo-element — so it is
+   never clipped by overflow:hidden on the code container.
+*/
+.code-tip {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(203, 166, 247, 0.55); /* catppuccin mauve */
+  text-underline-offset: 3px;
 }

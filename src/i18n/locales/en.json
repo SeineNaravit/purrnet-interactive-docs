@@ -1,0 +1,551 @@
+{
+  "_meta": {
+    "language": "English",
+    "code": "en",
+    "direction": "ltr",
+    "translatedBy": "Original"
+  },
+
+  "site": {
+    "name": "PurrNet Docs",
+    "tagline": "Interactive documentation for PurrNet — Unity's purrfect multiplayer networking library.",
+    "badge": "Free & Open Source · MIT License"
+  },
+
+  "nav": {
+    "officialSite": "Official Site",
+    "github": "GitHub",
+    "search": "Search docs...",
+    "toggleTheme": "Toggle theme"
+  },
+
+  "sidebar": {
+    "sections": {
+      "gettingStarted": "Getting Started",
+      "coreConcepts": "Core Concepts",
+      "remoteProcedureCalls": "Remote Procedure Calls",
+      "syncTypes": "Sync Types",
+      "plugAndPlay": "Plug & Play",
+      "codeFeatures": "Code Features",
+      "advanced": "Advanced"
+    },
+    "pages": {
+      "introduction": "Introduction",
+      "installation": "Installation",
+      "minimalSetup": "Minimal Setup",
+      "networkIdentity": "NetworkIdentity",
+      "networkBehaviour": "NetworkBehaviour",
+      "ownership": "Ownership",
+      "spawning": "Spawning & Despawning",
+      "networkRules": "Network Rules",
+      "serverRpc": "ServerRpc",
+      "observersRpc": "ObserversRpc",
+      "targetRpc": "TargetRpc",
+      "awaitableRpc": "Awaitable RPC",
+      "staticRpc": "Static & Generic RPC",
+      "syncVar": "SyncVar",
+      "syncList": "SyncList",
+      "syncDictionary": "SyncDictionary",
+      "syncEvent": "SyncEvent",
+      "syncTimer": "SyncTimer",
+      "syncInput": "SyncInput",
+      "networkTransform": "Network Transform",
+      "networkAnimator": "Network Animator",
+      "networkRigidbody": "Network Rigidbody",
+      "broadcasts": "Broadcasts",
+      "networkModules": "Network Modules",
+      "playerIdentity": "PlayerIdentity",
+      "authentication": "Authentication",
+      "bitpacker": "BitPacker Serialization",
+      "transports": "Transports",
+      "clientSidePrediction": "Client-Side Prediction",
+      "monsterStatus": "Monster Status System",
+      "inventorySystem": "Inventory System",
+      "topDownController": "Top Down Controller",
+      "thirdPersonController": "3rd Person Controller",
+      "gameplayStateController": "Gameplay State Controller",
+      "steamConnectionWorkflow": "Steam Connection Workflow"
+    }
+  },
+
+  "home": {
+    "heroTitle": "Learn PurrNet",
+    "heroTitleAccent": "visually & fast.",
+    "heroDesc": "Interactive animations for every command. Understand how multiplayer networking works — not just the API, but the why and when.",
+    "ctaStart": "Start Learning",
+    "ctaRpcs": "Jump to RPCs",
+    "features": {
+      "zeroBoilerplate": {
+        "label": "Zero Boilerplate",
+        "desc": "Instantiate() and Destroy() just work. No special spawn calls."
+      },
+      "flexibleAuthority": {
+        "label": "Flexible Authority",
+        "desc": "Switch between client auth and server auth via Network Rules — no code changes."
+      },
+      "modularDesign": {
+        "label": "Modular Design",
+        "desc": "NetworkModules enable reusable network logic independent of MonoBehaviours."
+      },
+      "perComponentOwnership": {
+        "label": "Per-Component Ownership",
+        "desc": "A single GameObject can have different owners per NetworkIdentity component."
+      },
+      "richSyncTypes": {
+        "label": "Rich Sync Types",
+        "desc": "SyncVar, SyncList, SyncDictionary, SyncEvent, SyncTimer, SyncInput."
+      },
+      "rpcSuperset": {
+        "label": "RPC Superset",
+        "desc": "ServerRpc, ObserversRpc, TargetRpc — plus awaitable, generic, and static variants."
+      }
+    }
+  },
+
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+
+  "visualizer": {
+    "play": "Play",
+    "pause": "Pause",
+    "reset": "Reset",
+    "forceSync": "Force Sync",
+    "latency": "Latency",
+    "packetLoss": "Packet Loss",
+    "sendInterval": "Interval",
+    "runLocally": "RunLocally",
+    "ownerAuth": "ownerAuth",
+    "interpolate": "Interpolate",
+    "restart": "Restart",
+    "accept": "Accept",
+    "deny": "Deny"
+  },
+
+  "badges": {
+    "rpc": "RPC",
+    "core": "Core",
+    "syncType": "Sync Type",
+    "plugPlay": "Plug & Play",
+    "advanced": "Advanced",
+    "purrDiction": "PurrDiction"
+  },
+
+  "callouts": {
+    "comingSoon": {
+      "title": "Full content coming soon",
+      "body": "Detailed interactive documentation for this topic is being written. For now, refer to the official PurrNet GitBook."
+    },
+    "gitRequired": {
+      "title": "Git required",
+      "body": "Make sure Git is installed on your system before using the Package Manager URL method. After installing Git, restart Unity and Unity Hub."
+    },
+    "infoTip": {
+      "whoCanSpawn": {
+        "title": "Who can spawn?",
+        "body": "By default (Server Auth rules), only the server can spawn networked objects. With Client Auth rules, clients can also call Instantiate() for networked prefabs. Control this via Network Rules."
+      }
+    },
+    "runLocallyDivergence": {
+      "title": "RunLocally divergence",
+      "body": "When using runLocally: true, the client may briefly show a state that the server later corrects. Always reconcile server authoritative state on the client to prevent visual glitches."
+    },
+    "neverTrustClientInput": {
+      "title": "Never trust client input",
+      "body": "Always validate on the server. A client can send any value — always check bounds, cooldowns, and game state before applying the result."
+    },
+    "bufferLastVsSyncVar": {
+      "title": "bufferLast vs SyncVar",
+      "body": "For a value that changes continuously (health, score, position), prefer a SyncVar — it handles buffering automatically. Use bufferLast on ObserversRpc for one-time events that must be replayed (game start, round end)."
+    },
+    "requireServer": {
+      "title": "requireServer",
+      "body": "If requireServer is false (default), clients can directly call ObserversRpc themselves if Network Rules allow it. In server-authoritative games, always set requireServer: true."
+    },
+    "declareAsField": {
+      "title": "Declare in field, not in methods",
+      "body": "SyncVar must be declared as a class field (or property) on a NetworkBehaviour. Creating one inside a method or adding it to a list will break synchronisation."
+    },
+    "avoidSyncEveryFrame": {
+      "title": "Avoid syncing every frame",
+      "body": "Don't set .value in Update() without a change check. Always check if the value actually changed before assigning."
+    },
+    "ownerAuthAndServer": {
+      "title": "ownerAuth and server writes",
+      "body": "When ownerAuth: true, only the owner can write from a client. The server can always write regardless."
+    },
+    "setDirtyForStructs": {
+      "title": "SetDirty for mutable structs",
+      "body": "If T is a struct and you mutate a field of an element in place, the SyncList cannot detect the change automatically. Call SetDirty(index) after the mutation to force a sync."
+    },
+    "isControllerShortcut": {
+      "title": "IsController shortcut",
+      "body": "Use IsController instead of isOwner || isServer — it returns true if you are the owner, or if you are the server and the object has no owner."
+    },
+    "giveOwnershipServerSide": {
+      "title": "GiveOwnership is server-side",
+      "body": "Call GiveOwnership from server code only unless your Network Rules explicitly allow client-initiated ownership transfer. Unrestricted ownership transfer is a common cheat vector."
+    },
+    "unsafeInProduction": {
+      "title": "Never use Unsafe rules in production",
+      "body": "The Unsafe preset gives all clients full authority. It is meant for rapid prototyping only. Ship with ServerOwner or ServerStrict."
+    },
+    "pooledObjectReference": {
+      "title": "Reference<T> for pooled objects",
+      "body": "Serialized references to components on pooled objects can break after pool recycling. Use PurrNet's Reference<T> wrapper instead."
+    },
+    "noOverrideOnRemote": {
+      "title": "Don't override transform directly on remote clients",
+      "body": "Setting transform.position directly on a non-authority client will be overwritten by the next NetworkTransform sync. Only modify position on the authority."
+    },
+    "bandwidthOptimization": {
+      "title": "Bandwidth optimization",
+      "body": "Disable sync axes you don't need. Use tolerance values to suppress micro-updates when the object is stationary."
+    },
+    "triggerReliableChannel": {
+      "title": "Triggers need Reliable channel",
+      "body": "Animator triggers are one-shot events. If the packet drops, the trigger is lost. Always use Channel.Reliable for trigger parameters."
+    },
+    "kinematicBodies": {
+      "title": "Kinematic Rigidbodies",
+      "body": "NetworkRigidbody is designed for dynamic Rigidbodies. For kinematic bodies, use NetworkTransform instead."
+    },
+    "modulesNotInLists": {
+      "title": "Do not store modules in collections",
+      "body": "Network modules must be declared as fields or properties on a NetworkIdentity. Storing them in arrays, lists, or dictionaries will break network registration."
+    },
+    "predictionComplexity": {
+      "title": "Prediction adds significant complexity",
+      "body": "Client-side prediction requires deterministic physics and careful state management. Start with NetworkTransform and only add prediction when you have a specific responsiveness requirement."
+    },
+    "neverStorePlainPasswords": {
+      "title": "Never store plain-text passwords",
+      "body": "Always hash credentials before sending over the network. PurrNet encrypts transport data but you are responsible for credential security."
+    },
+    "iPackedAutoVsManual": {
+      "title": "IPackedAuto vs IPacked",
+      "body": "Use IPackedAuto for simple data structs. Use IPacked for fine-grained control, delta compression, or types with variable-length fields."
+    },
+    "purrTransportFree": {
+      "title": "Purr Transport is free for development",
+      "body": "The built-in Purr relay transport requires no setup and is free for testing. Switch to UDP or Steam for production."
+    }
+  },
+
+  "paramTables": {
+    "headers": {
+      "parameter": "Parameter",
+      "type": "Type",
+      "default": "Default",
+      "description": "Description",
+      "required": "req"
+    }
+  },
+
+  "pages": {
+    "introduction": {
+      "title": "Introduction to PurrNet",
+      "description": "PurrNet is a free, MIT-licensed Unity networking library designed to feel native — no baking, no magic spawning APIs, no paywalls.",
+      "sections": {
+        "whatMakesDifferent": "What makes PurrNet different?",
+        "corePhilosophy": "Core philosophy",
+        "installation": "Installation (Quick)",
+        "networkLoop": "The network loop in 30 seconds",
+        "whatToLearnNext": "What to learn next"
+      }
+    },
+    "installation": {
+      "title": "Installation",
+      "description": "Three ways to add PurrNet to your Unity project.",
+      "sections": {
+        "method1": "Method 1: Git URL (Recommended)",
+        "method2": "Method 2: Unity Asset Store",
+        "method3": "Method 3: Manual download",
+        "afterInstall": "After installation"
+      }
+    },
+    "minimalSetup": {
+      "title": "Minimal Setup",
+      "description": "Get a networked scene running in under 5 minutes.",
+      "sections": {
+        "step1": "Step 1: Network Manager",
+        "step2": "Step 2: Your first NetworkBehaviour",
+        "step3": "Step 3: Host & Connect"
+      }
+    },
+    "networkIdentity": {
+      "title": "NetworkIdentity",
+      "description": "NetworkIdentity is the core component that registers a GameObject with the PurrNet network. Every networked object must have at least one.",
+      "sections": {
+        "whatItDoes": "What it does",
+        "comparison": "NetworkIdentity vs NetworkBehaviour",
+        "lifecycleCallbacks": "Lifecycle callbacks",
+        "keyProperties": "Key properties"
+      }
+    },
+    "networkBehaviour": {
+      "title": "NetworkBehaviour",
+      "description": "NetworkBehaviour is the base class for all multiplayer scripts. It extends NetworkIdentity with RPC support, SyncVars, and lifecycle hooks.",
+      "sections": {
+        "whatItAdds": "What NetworkBehaviour adds",
+        "properties": "Authority properties",
+        "lifecycle": "Lifecycle",
+        "example": "Complete example",
+        "vsModule": "NetworkBehaviour vs NetworkModule"
+      }
+    },
+    "ownership": {
+      "title": "Ownership",
+      "description": "Ownership determines which client has authority to drive a networked object. PurrNet supports per-component ownership.",
+      "sections": {
+        "vsAuthority": "Ownership vs Authority",
+        "api": "API reference",
+        "lifecycleCallbacks": "Lifecycle callbacks",
+        "givingTransfer": "Giving and transferring ownership",
+        "perComponent": "Per-component ownership"
+      }
+    },
+    "spawning": {
+      "title": "Spawning & Despawning",
+      "description": "PurrNet intercepts Unity's Instantiate() and Destroy() calls — there are no special network spawn methods to learn.",
+      "sections": {
+        "howItWorks": "How it works",
+        "basicSpawning": "Basic spawning",
+        "clientValidation": "Client spawn validation",
+        "despawning": "Despawning",
+        "objectPooling": "Object Pooling"
+      }
+    },
+    "networkRules": {
+      "title": "Network Rules",
+      "description": "Network Rules is a ScriptableObject that defines the authority model for your game — who can spawn, despawn, call RPCs, and write SyncVars.",
+      "sections": {
+        "presets": "Built-in presets",
+        "flags": "Configurable flags",
+        "creating": "Creating a Network Rules asset",
+        "runtimeSwap": "Switching rules at runtime",
+        "example": "Prototyping to production"
+      }
+    },
+    "serverRpc": {
+      "title": "ServerRpc",
+      "description": "ServerRpc executes a method on the server when called from a client. It is the primary way for clients to send authoritative commands.",
+      "sections": {
+        "howItWorks": "How it works",
+        "params": "Attribute parameters",
+        "basicUsage": "Basic usage",
+        "rpcInfo": "Reading sender info with RPCInfo",
+        "runLocally": "RunLocally — instant client feedback",
+        "examples": "Situational examples",
+        "antiPatterns": "Anti-patterns"
+      }
+    },
+    "observersRpc": {
+      "title": "ObserversRpc",
+      "description": "ObserversRpc broadcasts a method call from the server to all clients observing the object.",
+      "sections": {
+        "howItWorks": "How it works",
+        "params": "Attribute parameters",
+        "basicUsage": "Basic usage",
+        "bufferLast": "bufferLast — late joiners",
+        "example": "Situational example — kill feed"
+      }
+    },
+    "targetRpc": {
+      "title": "TargetRpc",
+      "description": "TargetRpc sends a method call from the server to exactly one specific client, identified by their PlayerID.",
+      "sections": {
+        "howItWorks": "How it works",
+        "params": "Parameters",
+        "usage": "Usage"
+      }
+    },
+    "awaitableRpc": {
+      "title": "Awaitable RPC",
+      "description": "Awaitable RPCs let you await a return value from a remote method call, similar to async/await in regular C#.",
+      "sections": {
+        "howItWorks": "How it works",
+        "syntax": "Syntax",
+        "timeouts": "Timeout handling",
+        "example": "Situational example — loot roll",
+        "comparison": "Awaitable RPC vs callback pattern"
+      }
+    },
+    "staticRpc": {
+      "title": "Static & Generic RPC",
+      "description": "PurrNet supports RPCs on static methods and generic type parameters for maximum flexibility.",
+      "sections": {
+        "staticRpc": "Static RPC",
+        "genericRpc": "Generic RPC",
+        "constraints": "Constraints",
+        "example": "Situational example"
+      }
+    },
+    "syncVar": {
+      "title": "SyncVar",
+      "description": "SyncVar automatically synchronises a typed variable across all connected clients whenever its value changes.",
+      "sections": {
+        "howItWorks": "How it works",
+        "params": "Constructor parameters",
+        "basicUsage": "Basic usage",
+        "previousValue": "Reading the previous value",
+        "examples": "Situational examples",
+        "customStruct": "Syncing a custom struct"
+      }
+    },
+    "syncList": {
+      "title": "SyncList",
+      "description": "SyncList is a network-aware list that automatically synchronises additions, removals, insertions, and clears across all clients.",
+      "sections": {
+        "howItWorks": "How it works",
+        "changeProps": "SyncListChange properties",
+        "methods": "Available methods",
+        "example": "Situational example — team roster"
+      }
+    },
+    "syncDictionary": {
+      "title": "SyncDictionary",
+      "description": "SyncDictionary is a network-aware key-value store that synchronises all mutations across all clients.",
+      "sections": {
+        "howItWorks": "How it works",
+        "changeProps": "SyncDictionaryChange properties",
+        "methods": "Available methods",
+        "example": "Situational example — scoreboard"
+      }
+    },
+    "syncEvent": {
+      "title": "SyncEvent",
+      "description": "SyncEvent is a networked event that fires across all clients when invoked on the authority — no manual RPC needed.",
+      "sections": {
+        "howItWorks": "How it works",
+        "declaration": "Declaration",
+        "subscribing": "Subscribing",
+        "example": "Situational example — game events"
+      }
+    },
+    "syncTimer": {
+      "title": "SyncTimer",
+      "description": "SyncTimer is a synchronized countdown timer that stays in lockstep across all clients automatically.",
+      "sections": {
+        "howItWorks": "How it works",
+        "api": "API",
+        "example": "Situational example — round timer"
+      }
+    },
+    "syncInput": {
+      "title": "SyncInput",
+      "description": "SyncInput synchronises raw player input from the owning client to the server, enabling server-side physics processing.",
+      "sections": {
+        "howItWorks": "How it works",
+        "usage": "Usage",
+        "example": "Situational example — movement controller",
+        "comparison": "SyncInput vs ServerRpc for movement"
+      }
+    },
+    "networkTransform": {
+      "title": "Network Transform",
+      "description": "NetworkTransform automatically synchronises position, rotation, scale, and parent across all clients.",
+      "sections": {
+        "setup": "Setup",
+        "settings": "Inspector settings",
+        "interpolation": "Interpolation explained",
+        "teleportation": "Teleportation",
+        "example": "Situational example — Vehicle boarding"
+      }
+    },
+    "networkAnimator": {
+      "title": "Network Animator",
+      "description": "NetworkAnimator synchronises Animator parameters and state transitions across all clients.",
+      "sections": {
+        "setup": "Setup",
+        "settings": "Inspector settings",
+        "usage": "Code usage",
+        "example": "Situational example — character animations"
+      }
+    },
+    "networkRigidbody": {
+      "title": "Network Rigidbody",
+      "description": "NetworkRigidbody synchronises physics state (velocity, angular velocity) across the network so remote Rigidbodies behave physically.",
+      "sections": {
+        "vsTransform": "NetworkRigidbody vs NetworkTransform",
+        "settings": "Inspector settings",
+        "usage": "Code usage",
+        "example": "Situational example — thrown grenade"
+      }
+    },
+    "broadcasts": {
+      "title": "Broadcasts",
+      "description": "Broadcasts send arbitrary data packets at the connection level — not tied to any NetworkIdentity.",
+      "sections": {
+        "whatDifferent": "What makes broadcasts different",
+        "api": "API",
+        "example": "Situational example — global chat"
+      }
+    },
+    "networkModules": {
+      "title": "Network Modules",
+      "description": "NetworkModule lets you create reusable, network-aware components that are not MonoBehaviours.",
+      "sections": {
+        "whatIs": "What is a NetworkModule?",
+        "lifecycle": "Lifecycle",
+        "usage": "How to attach",
+        "example": "Complete HealthModule example",
+        "vsNetworkBehaviour": "NetworkModule vs NetworkBehaviour"
+      }
+    },
+    "playerIdentity": {
+      "title": "PlayerIdentity",
+      "description": "PlayerIdentity is a typed registry that makes it easy to find, iterate, and call methods on all player objects.",
+      "sections": {
+        "api": "API",
+        "autoRegister": "Auto-registration",
+        "example": "Complete example",
+        "lobby": "Lobby roster example"
+      }
+    },
+    "authentication": {
+      "title": "Authentication",
+      "description": "PurrNet authentication validates clients with custom payloads before allowing them to participate in the game.",
+      "sections": {
+        "overview": "Overview",
+        "clientSide": "Client side: GetClientPayload",
+        "serverSide": "Server side: ValidateClientPayload",
+        "denial": "Listening for denial",
+        "example": "Situational examples"
+      }
+    },
+    "bitpacker": {
+      "title": "BitPacker Serialization",
+      "description": "BitPacker is PurrNet's efficient binary serializer for custom network types, minimising bandwidth.",
+      "sections": {
+        "modes": "Two serialization modes",
+        "registration": "Registering types",
+        "methods": "BitPacker methods",
+        "example": "Manual delta compression example",
+        "tips": "Bandwidth saving tips"
+      }
+    },
+    "transports": {
+      "title": "Transports",
+      "description": "PurrNet supports multiple transport layers: UDP, WebSocket, Steam, EOS, and more.",
+      "sections": {
+        "types": "Transport types",
+        "composite": "CompositeTransport",
+        "setup": "Setup",
+        "configuration": "Configuration"
+      }
+    },
+    "clientSidePrediction": {
+      "title": "Client-Side Prediction",
+      "description": "PurrDiction provides a full client-side prediction and server reconciliation framework built on top of PurrNet.",
+      "sections": {
+        "overview": "Overview",
+        "coreConcepts": "Core concepts",
+        "loop": "The prediction loop",
+        "example": "Minimal predicted character",
+        "whenToUse": "When to use — and when not to"
+      }
+    }
+  }
+}
